@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Un titlu</title>
+</head>
+<body>
+    <!--http://ase.softmentor.ro:81/Home/ExecutaOperatie
+        ?operand1=2&operand2=3&operatie=plus&raspunsText=true-->
+    <!-- http://ase.softmentor.ro:81/Home/ExecutaOperatie -->
+    <!-- Metode acceptate: GET și POST -->
+    <!--
+        operand1 - un numar
+        operand2 - un numar
+        operatie - plus / minus / inmultit / impartit
+        raspunsText - true / false
+    -->
+
+    <form method="post" 
+          action="http://ase.softmentor.ro:81/Home/ExecutaOperatie">
+        <input name="operand1" value="3" />
+        <select name="operatie">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="inmultit">*</option>
+            <option value="impartit">/</option>
+        </select>
+        <input name="operand2" value="5" />
+        <br />
+        <input type="checkbox" name="raspunsText" 
+               id="raspunsText" value="true" />
+        <label for="raspunsText">Afiseaza ca text</label>
+        <br />
+        <input type="submit" value="Trimite Cererea" />
+    </form>
+
+</body>
+</html>
