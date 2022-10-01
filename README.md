@@ -13,3 +13,5 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
 https://html.com/
 
 https://www.w3schools.com/html/
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps
