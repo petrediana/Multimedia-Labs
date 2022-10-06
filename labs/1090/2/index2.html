@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Agenda telefonica</title>
+    <style>
+        body {
+            font-size: 11pt;
+            margin: 0;
+            padding: 10px;
+        }
+
+        h1 {
+            background-color: blue;
+            color: white;
+            padding: 1rem;
+        }
+
+        table {
+            border: solid black 1px;
+            border-collapse: collapse;
+            width: 50%;
+            float: left
+        }
+
+        td, th {
+            padding: 8px 10px;
+            border-bottom: 1px solid gray;
+        }
+
+        th {
+            background-color: purple;
+        }
+
+        caption {
+            padding: 8px 10px;
+            border: solid black 1px;
+            border-bottom: none;
+            background-color: gray;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agenda telefonica</h1>
+        <table>
+            <caption>Agenda telefonica</caption>
+            <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Prenume</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>aaa</td>
+                    <td>AAA</td>
+                    <td>0744444444</td>
+                </tr>
+                <tr>
+                    <td>bbb</td>
+                    <td>BBB</td>
+                    <td>0777777777</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        Numar persoane: 2
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <form>
+            <label>
+                Nume
+            </label><br>
+            <input type="text" value="ccc"><br>
+            <label>
+                Prenume
+            </label><br>
+            <input type="text" value="CCC"><br>
+            <label>
+                Telefon
+            </label><br>
+            <input type="number" value="07485485485"><br>
+            <input type="submit" value="Submit">
+        </form>
+</body>
+</html>

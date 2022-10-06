@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: yellow;
+            border: black solid 2px;
+            width: 300px;
+            height: 300px;
+        }
+
+        .box-props {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .box-blue {
+            background-color: blue;
+            position: relative;
+            left: 100px;
+            z-index: 1;
+        }
+
+        .box-green {
+            background-color: green;
+            position:relative;
+            left:125px;
+            bottom: 50px;
+            z-index: 2;
+        }
+
+        .box-red {
+            background-color: red;
+            position:relative;
+            left: 175px;
+            bottom: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-props box-blue">Box1</div>
+        <div class="box-props box-green">Box2</div>
+        <div class="box-props box-red">Box3</div>
+    </div>
+</body>
+</html>
