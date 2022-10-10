@@ -8,10 +8,27 @@
 
 
 ## Link-uri utile
+
+HTML:
+
 https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
 
 https://html.com/
 
+
+CSS:
+
 https://www.w3schools.com/html/
 
 https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+https://www.w3schools.com/css/css_grid.asp
+
+
+JS:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview
