@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="id_div1">Hello from div, here is a list:
+        <ul id="id_lista">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+        </ul>
+    </div>
+
+    <div>Hello!</div>
+    <div class="some-css-class">World</div>
+    <div class="some-css-class">World</div>
+    <div class="some-css-class">World</div>
+
+
+    <script>
+        const div_1 = document.getElementById('id_div1');
+        const lista = document.getElementById('id_lista');
+
+        document.querySelector('#id_lista');
+        document.querySelector('div');
+        document.querySelectorAll('div');
+
+        document.getElementsByClassName('some-css-class');
+
+        const div_nou = document.createElement('div');
+        div_nou.innerText = "Div creat!!";
+
+        document.body.append(div_nou);
+
+        const list_element_nou = document.createElement('li');
+        list_element_nou.innerText = "Five";
+        lista.append(list_element_nou);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Hello!");
+
+        function something() {
+            var a = 10;
+            return a;
+        }
+
+
+        const arr = [ 1, 2, 3, 4, 5, 6, 7 ];
+        // forEach, map, filter
+
+        const b = arr.forEach(num => {
+            console.log(num);
+        });
+
+        const arr_2 = arr.map(num => {
+            // logica
+            return num * 2;
+        });
+
+        // const arr_3 = arr.filter(num => num % 2 === 0)
+        const arr_3 = arr.filter(num => {
+            if (num % 2 === 0) {
+                return num;
+            }
+        });
+
+        console.log(b);
+        console.log(arr_2);
+        console.log(arr_3);
+
+        const persoana = {
+            nume: "Ion",
+            prenume: "Ion2",
+            varsta: 20,
+            hobbiuri: ["citit", "plimbat", "bla bla", "bla"],
+            esteStudent: true,
+            obiect: {
+                ceva1: "hello",
+                ceva2: "hello2"
+            },
+            whatever: "hello",
+        };
+
+        console.log(persoana);
+        console.log(persoana.nume + " " + persoana["prenume"]);
+
+        // for (const cheie in persoana) {
+        //     console.log(cheie + ", " + persoana[cheie]);
+        // }
+
+        Object.keys(persoana).forEach(cheie => {
+            console.log(cheie);
+            const valoare = persoana[cheie];
+            console.log(valoare + " TIPUL -> " + typeof valoare);
+        });
+
+        console.log("-------------");
+        Object.values(persoana).forEach(valoare => {
+            console.log(valoare);
+        });
+    </script>
+</body>
+</html>
