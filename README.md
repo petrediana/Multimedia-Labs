@@ -32,3 +32,5 @@ JS:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview
+
+Beer api: https://punkapi.com/documentation/v2
