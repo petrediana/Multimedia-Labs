@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id_h1">Hello from h1</h1>
+
+    <div>
+        <p>Hello from list below:</p>
+        <ul id="id_lista">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+            <li>Forth</li>
+            <li>hgfhyfy</li>
+        </ul>
+    </div>
+
+    <div>Div1</div>
+    <div>Div2</div>
+
+    <script>
+        const lista = document.getElementById("id_lista");
+        console.log(lista);
+
+        const item = document.createElement("li");
+        item.innerText = "Fifth";
+        lista.append(item);
+
+        const div = document.createElement("div");
+        div.innerText = "Hello";
+        document.body.append(div);
+    </script>
+
+   <script>
+    // console.log("Hello");
+    // let a = 10;
+
+    // function something() {
+    //     console.log(a);
+    // }
+
+    // // console.log(b);
+
+    // something();
+
+    // // Tipuri de date
+    // const array = [1, 2, 3, 'hello', '6'];
+
+    // array.forEach(elem => console.log(elem));
+    
+    // const array_nou = array.map(elem => {
+    //     return elem + 1;
+    // });
+
+    // console.log(array_nou);
+    
+    // const array_nou_2 = array.filter(elem => {
+    //     return elem % 2 === 1;
+    // });
+
+    // console.log(array_nou_2);
+
+    // // Obiecte
+    // const persoana = {
+    //     nume: 'Ion',
+    //     prenume: 'Ion',
+    //     varsta: 20,
+    //     hobbiuri: ['citit', 'plimbat', 'blabla'],
+    //     esteStudent: true,
+    //     mancarePreferata: {
+    //         nume: 'Clatita',
+    //         compozitie: 'Ciocolata cu fructe',
+    //     },
+    // };
+
+    // console.log(persoana);
+    // Object.keys(persoana).forEach(cheie => {
+    //     console.log(`${cheie}, are tipul: ${typeof persoana[cheie]}`)
+    // });
+
+    // console.log("Valori:");
+    // Object.values(persoana).forEach(valoare => {
+    //     console.log(`${valoare}, are tipul: ${typeof valoare}`)
+    // });
+
+    // console.log(persoana.hasOwnProperty("nume"));
+   </script> 
+</body>
+</html>
