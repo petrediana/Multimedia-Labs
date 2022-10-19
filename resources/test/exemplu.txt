@@ -1,0 +1,14 @@
+1) Sa se construiasca un document HTML care contine:
+	- doua elemente de tipul text input,
+	- un element de tipul input number,
+	- un element de tip buton,
+	- un element de tip tabel,
+Asociati un id unic fiecarui element html de care aveti nevoie.
+
+2) Scrieti o functie JavaScript care primeste ca parametru 3 variabile: nume, prenume, salariul si se foloseste de aceste valori pentru a adauga o linie in tabel.
+Apelati functia cu valori de test.
+
+3) Scrieti codul JS care face ca la apasarea elementului input de tip buton sa adauge in tabel numele, prenumele si salariul citite din controalele de tip input text/number.
+
+4) Scrieti codul JS care face la click pe al unei linii din tabel sa afiseze in footer-ul tabelului informatiile sub forma: Nume-Prenume-Salariu si linia din tabel sa isi schimbe culoarea.
+

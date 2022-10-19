@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text" id="id_input_nume" />
+    <input type="text" id="id_input_prenume" />
+    <input type="number" id="id_input_salariul"/>
+    <input type="button" id="id_input_btn_adauga" value="Adauga"/>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Salariu</th>
+        </tr>
+        </thead>
+        <tbody id="id_tbody_date">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td id="id_tfoot_info">Info footer: Nimic</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+      // Subiectul 2
+        function adaugaInTabel(nume, prenume, salariul) {
+          const tbody = document.getElementById("id_tbody_date");
+
+          const linieNouaTabel = document.createElement("tr");
+
+          const tdNume = document.createElement("td");
+          tdNume.innerText = nume;
+          linieNouaTabel.append(tdNume);
+
+          const tdPrenume = document.createElement("td");
+          tdPrenume.innerText = prenume;
+          linieNouaTabel.append(tdPrenume);
+
+          const tdSalariul = document.createElement("td");
+          tdSalariul.innerText = salariul;
+          linieNouaTabel.append(tdSalariul);
+
+          tbody.append(linieNouaTabel);
+
+          // Subiectul 4
+          linieNouaTabel.addEventListener("click", () => {
+            // Afisare date in footer
+            const tdDinFooter = document.getElementById("id_tfoot_info");
+            tdDinFooter.innerText = "Info footer: " + nume + "-" + prenume + "-" + salariul;
+
+            // Schimbat stil
+            linieNouaTabel.style.backgroundColor = "pink";
+          });
+        }
+
+        // Apelez functia pt subiectul 2
+      adaugaInTabel("Ion", "Popescu", 2000);
+
+        // Subiectul 3
+      const btnAdauga = document.getElementById("id_input_btn_adauga");
+      btnAdauga.addEventListener("click", () => {
+        const inputNume = document.getElementById("id_input_nume");
+        const inputPrenume = document.getElementById("id_input_prenume");
+        const inputSalariul = document.getElementById("id_input_salariul");
+
+        adaugaInTabel(inputNume.value, inputPrenume.value, inputSalariul.value);
+      });
+    </script>
+</div>
+</body>
+</html>
