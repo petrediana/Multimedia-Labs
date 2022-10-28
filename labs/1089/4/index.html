@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Lista bere:</div>
+    <ul id="id_lista_bere">
+    </ul>
+    <script>
+        const API_URL = "https://api.punkapi.com/v2/beers";
+        
+        async function apeleazaApi() {
+            const req = await fetch(API_URL);
+            const data = await req.json();
+
+            const simplifiedData = data.map(bere => {
+                return {
+                    name: bere.name,
+                    description: bere.description
+                };
+            });
+
+            const listaBere = document.getElementById("id_lista_bere");
+            // simplifiedData.forEach(bere => {
+            //     const itemBere = document.createElement("li");
+            //     itemBere.innerText = bere.name;
+
+            //     listaBere.append(itemBere);
+            // });
+
+            for (let i = 0; i < simplifiedData.length; i++) {
+                const bere = simplifiedData[i];
+
+                const itemBere = document.createElement("li");
+                itemBere.innerText = bere.name;
+
+                listaBere.append(itemBere);
+            }
+        }
+
+        apeleazaApi();
+    </script>
+</body>
+</html>
