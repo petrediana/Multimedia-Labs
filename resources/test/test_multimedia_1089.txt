@@ -1,0 +1,41 @@
+Numarul 1:
+
+1) Sa se construiasca un document HTML care contine:
+	- doua elemente de tipul text input,
+	- un element de tipul input number,
+	- un element de tip buton,
+	- un element de tip lista (ordonata/neordonata - la alegere),
+	- un element de tip div care afiseaza informatii despre numarul de elemente din lista
+Asociati un id unic fiecarui element html de care aveti nevoie.
+
+Adaugati static in lista urmatoarea linie: Ford - Focus ST -> 280 CP. Si in elementul de tip div: Numar masini: 1
+
+2) Scrieti o functie JavaScript care primeste ca parametru un obiect cu proprietatile: marca, model, caiPutere si se foloseste de aceste valori pentru a adauga o linie in lista.
+Apelati functia cu valori de test.
+
+3) Scrieti codul JS care face ca la apasarea elementului input de tip buton sa adauge in lista marca, modelul, caiiPutere citite din controalele de tip input text/number.
+
+Pentru punctele 2) si 3) modificati corespunzator informatia din elementul div.
+
+4) Scrieti codul JS care permite ca la apasarea unei linii din lista aceasta sa isi schimbe culoarea de fundal in verde.
+
+Numarul 2:
+
+1) Sa se construiasca un document HTML care contine:
+	- doua elemente de tipul text input,
+	- un element de tipul input number,
+	- un element de tip buton,
+	- un element de tip tabel,
+Asociati un id unic fiecarui element html de care aveti nevoie.
+
+Adaugati static in tabel urmatoarea linie: Bucuresti, Piata Romana, 6. Si in footer-ul tabelul valoarea: Numar adrese: 1
+
+2) Scrieti o functie JavaScript care primeste ca parametru un obiect cu proprietatile oras, strada, numar si se foloseste de aceste valori pentru a adauga o linie in tabel.
+Apelati functia cu valori de test.
+
+3) Scrieti codul JS care face ca la apasarea elementului input de tip buton sa adauge in tabel orasul, strada si numarul citite din controalele de tip input text/number.
+
+Pentru punctele 2) si 3) modificati corespunzator informatia din footer-ul tabelului.
+
+4) Scrieti codul JS care permite ca la apasarea unei linii din tabel aceasta sa isi schimbe culoarea de fundal in rosu.
+
