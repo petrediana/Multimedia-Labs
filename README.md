@@ -36,3 +36,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 Beer api: https://punkapi.com/documentation/v2
+
+Canvas API:
+
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
