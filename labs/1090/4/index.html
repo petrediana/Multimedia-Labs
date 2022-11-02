@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Lista bere:</p>
+        <ul id="id_lista_bere"></ul>
+    </div>
+    <script>
+       const url = "https://api.punkapi.com/v2/beers";
+
+       async function doRequest() {
+        const request = await fetch(url);
+        const data = await request.json();
+
+        // map
+        const simplifiedData = data.map(beer => {
+            return {
+                name: beer.name,
+                description: beer.description
+            };
+        });
+
+        const lista = document.getElementById("id_lista_bere");
+
+        simplifiedData.forEach(bere => {
+            const itemBereLista = document.createElement("li");
+            itemBereLista.innerText = bere.name;
+
+            lista.append(itemBereLista);
+        });
+       }
+
+       doRequest();
+    </script>
+</body>
+</html>

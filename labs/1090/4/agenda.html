@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agenda telefonică</title>
+        <link rel="stylesheet" type="text/css" href="agenda.css">
+    </head>
+    <body>
+        <h1>Agenda telefonică</h1>
+        <table>
+            <caption>
+                Lista persoane
+            </caption>
+            <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Prenume</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            <tbody id="id_tbody">
+                <tr>
+                    <td>Popescu</td>
+                    <td>Ion</td>
+                    <td>023423222</td>
+                </tr>
+                <tr>
+                    <td>Vasilescu</td>
+                    <td>Maria</td>
+                    <td>073423222</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td id="id_nr_p" colspan="3">Număr persoane: 2</td>
+                </tr>
+            </tfoot>
+        </table>
+    <form action="#" class="controls">
+        <label for="nume">Nume:</label>
+        <input name="nume" id="nume">
+        
+        <label for="prenume">Prenume:</label>
+        <input name="prenume" id="prenume">
+
+        <label for="telefon">Telefon:</label>
+        <input name="telefon" id="telefon">
+
+        <input type="button" id="btnAdauga" name="btnAdauga" value="Adaugă">
+    </form>
+
+    <script>
+        const btnAdauga = document.getElementById("btnAdauga");
+        btnAdauga.addEventListener("click", () => {
+            const tbody = document.getElementById("id_tbody");
+
+            const iNume = document.getElementById("nume");
+            const iPrenume = document.getElementById("prenume");
+            const iTelefon = document.getElementById("telefon");
+
+            const tr = document.createElement("tr");
+
+            const tdNume = document.createElement("td");
+            const tdPrenume = document.createElement("td");
+            const tdTelefon = document.createElement("td");
+
+            tdNume.innerText = iNume.value;
+            tdPrenume.innerText = iPrenume.value;
+            tdTelefon.innerText = iTelefon.value;
+
+            tr.append(tdNume);
+            tr.append(tdPrenume);
+            tr.append(tdTelefon);
+
+            tbody.append(tr);
+
+            const tdNrP = document.getElementById("id_nr_p");
+            tdNrP.innerText = "Numar Persoane: " + tbody.children.length;
+        });
+    </script>
+    </body>
+</html>
