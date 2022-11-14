@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <canvas
+     id="id_canvas"
+     width="500"
+     height="400"
+     style="border: solid black 2px"
+     ></canvas>
+
+     <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            // console.log("Hello");
+            const canvas = document.getElementById("id_canvas");
+            const ctx = canvas.getContext("2d");
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const cerc_x = width / 2;
+            const cerc_y = height / 2;
+
+            const raza = width * 0.7 / 2;
+
+            const bucati = 18;
+            const total = bucati * 2;
+            const da = 2 * Math.PI / total;
+            
+            for (let i = 0; i < total; i += 2) {
+                const startAngle = i * da;
+                const endAngle = (i + 1) * da;
+
+                ctx.beginPath();
+                ctx.moveTo(cerc_x, cerc_y);
+                ctx.arc(cerc_x, cerc_y, raza, startAngle, endAngle);
+                
+                const culoare = 360 * i / total;
+                ctx.fillStyle = `hsl(${culoare}, 100%, 50%)`;
+                console.log(`hsl(${culoare}, 100%, 50%)`);              
+                ctx.fill();
+
+                for (let saturatie = 100; saturatie > 0; saturatie -= 10) {
+                    ctx.beginPath();
+                    ctx.moveTo(cerc_x, cerc_y);
+                    ctx.arc(cerc_x,
+                     cerc_y,
+                      saturatie * raza / 100,
+                       startAngle,
+                        endAngle);
+
+                    ctx.fillStyle = `hsl(${culoare}, ${saturatie}%, 50%)`;
+                    ctx.fill();
+                }
+
+                const textAngle = (startAngle + endAngle) / 2;
+                const textRaza = raza * 1.1;
+                const text_x = cerc_x + textRaza * Math.cos(textAngle);
+                const text_y = cerc_y + textRaza * Math.sin(textAngle);
+
+                ctx.fillStyle = "black";
+                ctx.fillText(culoare, text_x, text_y);
+            }
+        });
+     </script>
+</body>
+</html>

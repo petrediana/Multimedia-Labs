@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <canvas
+        id="id_canvas"
+    >
+    </canvas>
+    <script>
+        const imagine = document.createElement("img");
+        imagine.src = "./penguin.jpg";
+        imagine.addEventListener("load", () => {
+            console.log("Loaded");
+            const canvas = document.getElementById("id_canvas");
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(imagine, 0, 0);
+        });
+
+    </script>    
+</body>
+</html>
