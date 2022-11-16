@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <canvas
+        id="id_canvas"
+        width="400"
+        height="400"
+        style="border: solid black 2px"
+    >
+    </canvas>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Loaded!");
+            const canvas = document.getElementById("id_canvas");
+            const ctx = canvas.getContext("2d");
+
+            const width = canvas.width, height = canvas.height;
+            const cerc_x = width / 2;
+            const cerc_y = height / 2;
+
+            const raza = width * 0.8 / 2;
+            const arce_cerc = 18;
+            const total = arce_cerc * 2;
+
+            const da = 2 * Math.PI / total;
+
+            for (let index = 0; index < total; index += 2) {
+                const startAngle = index * da;
+                const endAngle = (index + 1) * da;
+
+                ctx.beginPath();
+                ctx.moveTo(cerc_x, cerc_y);
+                ctx.arc(cerc_x, cerc_y, raza, startAngle, endAngle);
+
+                const color = 360 * index / total;
+                ctx.fillStyle = `hsl(${color}, 100%, 50%)`;
+                ctx.fill();
+
+                for (let saturatie = 100; saturatie > 0; saturatie -= 10) {
+                    ctx.beginPath();
+                    ctx.moveTo(cerc_x, cerc_y);
+                    ctx.arc(cerc_x, cerc_y, saturatie * raza / 100, startAngle, endAngle);
+
+                    ctx.fillStyle = `hsl(${color}, ${saturatie - 10}%, 50%)`;
+                    ctx.fill();
+                }
+
+                const raza_text = raza * 1.1;
+                const alpha_text = (startAngle + endAngle) / 2;
+                const x_text = cerc_x + raza_text * Math.cos(alpha_text);
+                const y_text = cerc_y + raza_text * Math.sin(alpha_text);
+
+                ctx.fillStyle = "black";
+                ctx.fillText(color, x_text, y_text);
+            }
+        });
+    </script>
+</body>
+</html>
