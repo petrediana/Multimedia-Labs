@@ -1,0 +1,25 @@
+Înainte de a parcurge seminarul vă rog să rezolvați următorul exercițiu.
+
+Creați un fișier html numit NUME_PRENUME.html care să conțină următoarele elemente:
+	- un element de tipul input select,
+	- un element de tipul text input,
+	- un element de tip buton - la apăsarea acestuia se va efectua o acțiune,
+	- un element svg - îl vom folosi pentru a desena pe el (similar cu elementul canvas).
+
+Elementul svg va fi poziționat în centrul paginii, va avea o dimensiune prestabilită (ce dimensiune vreți voi) și marginile acestuia vor fi colorate cu negru.
+
+Elementul de tipul select permite alegerea uneia dintre valorile: dreptunghi, cerc.
+Elementul de tipul input text va primi niște coordonate (x,y) sub forma: 100, 120
+La apăsarea butonului se va desena pe elementul svg figura aleasă la coordonatele introduse, de exemplu: selectez dreptunghi și coordonatele 100, 120. În cazul în care utilizatorul dorește să introducă coordonate eronate (valori negative sau valori care depășesc dimensiunea elementului svg) în pagina de html se va afișa o alertă care informează utilizatorul.
+Atenție! Coordonatele trebuie să fie relative la poziția elementului svg.
+
+De asemenea, la apăsarea (click) unui element existent în svg acesta va avea marginile colorate cu roșu. Dacă elementul are deja marginile cu roșu la apăsarea următoare marginile roșii vor dispărea.
+
+Implementați cerințele de mai sus.
+
+
+Documentație svg: https://developer.mozilla.org/en-US/docs/Web/SVG
+Tips pentru creat elemente svg dinamic și adăugat de stiluri: https://www.motiontricks.com/creating-dynamic-svg-elements-with-javascript/
+
+
+După ce acest exercițiu este rezolvat, uitați-vă pe seminar și interacționați cu funcționalitățile expuse. Faceți o poză paginii după ce desenați câteva elemente și aveți selectat unul dintre cele desenate. Cu click dreapta selectați un element.
