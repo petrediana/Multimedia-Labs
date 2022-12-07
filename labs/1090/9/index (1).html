@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Audio</title>
+</head>
+<body>
+    <div>
+        <button id="id_btn_previous">Previous</button>
+        <button id="id_btn_play_pause">Play/Pause</button>
+        <button id="id_btn_next">Next</button>
+    </div>
+    <ul>
+        <li data-url="media/sample_1.mp3" style="font-weight:bold">Sample 1 - Melodia 1</li>
+        <li data-url="media/sample_2.mp3">Sample 2 - Melodia 2</li>
+        <li data-url="media/sample_3.mp3">Sample 3 - Melodia 3</li>
+    </ul>
+    <audio id="id_audio" src="media/sample_1.mp3" controls></audio>
+
+    <script>
+        function getListItems() {
+            return [...document.querySelectorAll("li")]
+        }
+
+        function getAudioItemsUrl() {
+            return getListItems().map(item => item.dataset.url);
+        }
+
+
+        function getCurrentItemIndex() {
+            return getListItems().findIndex(item => item.style.fontWeight === "bold");
+        }
+
+        function setIndex(index) {
+            audio.src = getAudioItemsUrl()[index];
+            audio.load();
+            audio.play();
+
+            const items = getListItems();
+            items.forEach(item => {
+                item.style.fontWeight = "";
+            });
+            
+            items[index].style.fontWeight = "bold";
+        }
+
+        function changeAudio(audioFilePath) {
+            setIndex(getAudioItemsUrl().indexOf(audioFilePath));
+        }
+
+        function changeCurrentPlayingAudio(direction) {
+            const currentIndex = getCurrentItemIndex();
+            const nextIndex = currentIndex + direction;
+
+            if (nextIndex < 0) {
+                setIndex(getAudioItemsUrl().length - 1);
+                return;
+            }
+
+            if (nextIndex >= getAudioItemsUrl().length) {
+                setIndex(0);
+                return;
+            }
+
+            setIndex(nextIndex);
+        }
+
+        const audio = document.getElementById("id_audio");
+        const items = getListItems();
+        items.forEach(item => {
+            item.addEventListener("click", (event) => {
+                const mediaUrl = event.target.dataset.url;
+                changeAudio(mediaUrl);
+            });
+        });
+
+        const btnPrevious = document.getElementById("id_btn_previous");
+        const btnPlayPause = document.getElementById("id_btn_play_pause");
+        const btnNext = document.getElementById("id_btn_next");
+
+        btnPlayPause.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+
+        btnPrevious.addEventListener("click", () => {
+            changeCurrentPlayingAudio(-1);
+        });
+
+        btnNext.addEventListener("click", () => {
+            changeCurrentPlayingAudio(1);
+        });
+    </script>
+</body>
+</html>
