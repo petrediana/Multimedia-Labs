@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="450" height="300" id="id_canvas"></canvas>
+    <video id="id_video" src="media/sample_2.mp4" controls muted autoplay loop style="visibility: hidden;"></video>
+
+    <script>
+        let video, smallVideo, canvas, context, W, H;
+        let showControls = false;
+
+        video = document.getElementById("id_video");
+        canvas = document.getElementById("id_canvas");
+        context = canvas.getContext("2d");
+        W = canvas.width;
+        H = canvas.height;
+
+        smallVideo = document.createElement("video");
+        smallVideo.src = "media/sample_1.mp4";
+        smallVideo.muted = true;
+        smallVideo.autoplay = true;
+        smallVideo.loop = true;
+        smallVideo.load();
+        smallVideo.play();
+
+        canvas.addEventListener("mouseenter", () => {
+            showControls = true;
+        });
+
+        canvas.addEventListener("mouseleave", () => {
+            showControls = false;
+        });
+
+        canvas.addEventListener("click", () => {
+            let temp = smallVideo;
+            smallVideo = video;
+            video = temp;
+        });
+
+        function draw() {
+            context.drawImage(video, 0, 0);
+
+            if (showControls) {
+                context.drawImage(smallVideo,
+                0, 0, W, H, // source
+                10, 10, 160, 90 // destination
+                );
+            }
+
+            context.fillStyle = "gray";
+            context.fillRect(0, H - 40, W, 40);
+
+            if (video.duration) {
+                const progress = W * video.currentTime / video.duration;
+                context.fillStyle = "red";
+                context.fillRect(0, H - 40, progress, 40);
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>
